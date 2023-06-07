@@ -3,3 +3,45 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+.contact_link_exp_div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    justify-items: center;
+    padding: 3%;
+
+}
+
+.contact_links_div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    justify-items: center ;
+    width: 40vw;
+}
+
+.contact_exp_div{
+    text-align: center;
+    width: 40vw;
+    font-size: xx-large;
+}
+
+.contact_link{
+    font-size: xx-large;
+}
+.contact_header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center ;
+    font-size: 30px;
+}
+
+.span_pic{
+    size: 45;
+}
+
+@media screen and (max-width: 768px) {
+
+}
