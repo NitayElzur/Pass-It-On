@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.top-nav{
+    height: 100px;
+    background-color: var(--pink);
+}
+
+.bot-nav{
+    height: 100px;
+    background-color:var(--pink);
+}
+
+.top-nav-links-div{
+    display: flex;
+    justify-content: space-around;
+}
+
+.bot-nav-links-div{
+    display: flex;
+    justify-content: space-around;
+}
