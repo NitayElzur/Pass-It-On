@@ -1,0 +1,27 @@
+{
+    "challenge": [
+        {
+            "id": 1,
+            "title": "Garbage Cleanup",
+            "isOpen": true,
+            "image": "",
+            "desc": "Meeting in a city park and cleaning up the area",
+            "start-date": "",
+            "end-date": "",
+            "participants": [
+                {
+                    "grade": "",
+                    "response": ""
+                },
+                {
+                    "grade": "",
+                    "response": ""
+                },
+                {
+                    "grade": "",
+                    "response": ""
+                }
+            ]
+        }
+    ]
+}

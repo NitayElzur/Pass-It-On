@@ -1,0 +1,32 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "username": "",
+            "password": "",
+            "picture": "",
+            "grade": "",
+            "invites": [
+                {
+                    "email": "",
+                    "accepted": false
+                },
+                {
+                    "email": "",
+                    "accepted": false
+                },
+                {
+                    "email": "",
+                    "accepted": false
+                }
+            ],
+            "challenges": [
+                {
+                    "id": "",
+                    "title": ""
+
+                }
+            ]
+        }
+    ]
+}
