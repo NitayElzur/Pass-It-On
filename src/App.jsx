@@ -10,12 +10,21 @@ import CreateChallenges from './components/CreateChallenges/CreateChallenges'
 import Profile from './components/Profile/Profile'
 import Vote from './components/Vote/Vote'
 import  Calendar  from './components/Calendar/Calendar';
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, json } from "react-router-dom";
 import Login from './components/Login/Login';
 import SignUp from './components/SignUp/SignUp';
-
+import { useEffect } from 'react';
+import admin from './Jsons/admin.json'
+import users from './Jsons/users.json'
+import challenges from './Jsons/challenge.json'
 
 function App() {
+  useEffect(() => {
+    !localStorage.getItem('admin') && localStorage.setItem('admin', JSON.stringify(admin));
+    !localStorage.getItem('users') && localStorage.setItem('users', JSON.stringify(users));
+    !localStorage.getItem('challenges') && localStorage.setItem('challenges', JSON.stringify(challenges));
+    !localStorage.getItem('currentUser') && localStorage.setItem('currentUser', '')
+  }, [admin, users, challenges])
   return (
     <div>
       <Routes>
