@@ -30,11 +30,12 @@ function Layout() {
       <div className='top-nav'>
         <div className='top-nav-links-div'>
           <img id='logo' src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Heart-hand-shake.svg/640px-Heart-hand-shake.svg.png" alt="" />
-          {userType === 'user' || 'visitor' && <Link to="/">Home</Link>}
+          {(userType === 'user' || userType === 'visitor') && <Link to="/">Home</Link>}
           {userType === 'admin' && <Link to="/addeditchallenges">Add/Edit Challenge</Link>}
           {userType === 'user' && <Link to="/vote">Vote</Link>}
           {userType === 'admin' && <Link to="/calendar">Calendar</Link>}
           {userType === 'visitor' && <Link to="/login">Login</Link>}
+          {(userType === 'admin' || userType === 'user') && <Link to="/login">Sign out</Link>}
         </div>
 
       </div>

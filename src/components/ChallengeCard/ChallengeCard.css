@@ -30,7 +30,7 @@
     justify-content: space-evenly;
 }
 
-.button {
+.join-btn {
     padding: 1em 2em;
     border: none;
     border-radius: 5px;
@@ -48,14 +48,14 @@
     width: 80%;
 }
 
-button:hover {
+.join-btn:hover {
     color: black;
     transform: scale(1.1);
     outline: 2px solid black;
     box-shadow: 4px 5px 17px -4px black;
 }
 
-button::before {
+.join-btn::before {
     content: "";
     position: absolute;
     left: -50px;
@@ -68,6 +68,6 @@ button::before {
     transition: width 1000ms;
 }
 
-button:hover::before {
+.join-btn:hover::before {
     width: 250%;
 }
