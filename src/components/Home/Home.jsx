@@ -1,5 +1,6 @@
 import React from 'react'
-import Challenges from '../Challenges/Challenges'
+import ChallengeCard from '../ChallengeCard/ChallengeCard'
+import '../../Jsons/challenge.json'
 import '../Home/Home.css'
 
 function Home() {
@@ -28,8 +29,13 @@ function Home() {
 
       </div>
 
-      <Challenges/>
+      <div id='challenges-container'>
+        <div className='card-div'><ChallengeCard/></div>
+        <div className='card-div'><ChallengeCard/></div>
+        <div className='card-div'><ChallengeCard/></div>
+      </div>
 
+      
     </div>
 
 
