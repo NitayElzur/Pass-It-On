@@ -1,8 +1,15 @@
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 import './SignUp.css'
+import { useState } from 'react';
 function SignUp() {
     const {handleSubmit, register, formState: {errors}} = useForm();
+    const [formData, setFormData] = useState({
+        username: '',
+        email: '', 
+        password: '',
+        password2: ''
+    })
     return (
         <>
 
@@ -11,12 +18,12 @@ function SignUp() {
             })}>
                 <p className="sign-up-form-title">Sign up</p>
                 <div className="sign-up-input-container">
-                    <input placeholder="Enter username" type="text" {
-                     ...register('usernmae', {required: true})   
+                    <input placeholder="Enter username" value={formData.username} onInput={e => setFormData({...formData, username: e.target.value})} type="text" {
+                     ...register('username', {required: true})   
                     }/>
                 </div>
                 <div className="sign-up-input-container">
-                    <input placeholder="Enter email" type="email" {
+                    <input placeholder="Enter email" value={formData.email} onInput={e => setFormData({...formData, email: e.target.value})} type="email" {
                      ...register("email", {required: true})   
                     }/>
                 </div>

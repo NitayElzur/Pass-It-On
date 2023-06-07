@@ -1,17 +1,36 @@
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 import './Login.css'
+import { useEffect, useState } from 'react';
 
 function Login() {
     const { formState = { errors }, register, handleSubmit, } = useForm()
+    const [data, setData] = useState([]);
+    const [formData, setFormData] = useState({
+        username: '',
+        password: ''
+    });
+    useEffect(() => {
+        setData(JSON.parse(localStorage.getItem('users'))?.users);
+    }, [])
     return (
         <form className="login-form" onSubmit={handleSubmit((e) => {
-            console.log(e);
+            if(!data.some(v => v.username === e.username)) {
+                setFormData({password: '', username: ''})
+                alert('Username does not exist')
+            }
+            else if (!data.some(v => v.username === e.username && v.password === e.password)){
+                setFormData({...formData, password: ''})
+                alert('Incorrect password')
+            }
+            else {
+                localStorage.setItem('currentUser', JSON.stringify(data.filter(v => v.username === e.username && v.password === e.password)[0].id))
+            }
         })}>
             <p className="login-form-title">Sign in to your account</p>
             <div className="login-input-container">
-                <input placeholder="Enter email or username" type="email" {
-                    ...register("email", {required: true})
+                <input placeholder="Enter username" value={formData.username} onInput={e => setFormData({...formData, username: e.target.value})} type="text" {
+                    ...register("username", {required: true})
                 }/>
                     <span>
                         <svg stroke="currentColor" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -20,7 +39,7 @@ function Login() {
                     </span>
             </div>
             <div className="login-input-container">
-                <input placeholder="Enter password" type="password"{
+                <input placeholder="Enter password" value={formData.password} onInput={e => setFormData({...formData, password: e.target.value})} type="password"{
                     ...register("password", {required: true})
                 }/>
 
