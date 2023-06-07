@@ -11,7 +11,7 @@ function Login() {
         password: ''
     });
     useEffect(() => {
-        setData(JSON.parse(localStorage.getItem('users'))?.users);
+        setData(JSON.parse(localStorage.getItem('users')));
     }, [])
     return (
         <form className="login-form" onSubmit={handleSubmit((e) => {

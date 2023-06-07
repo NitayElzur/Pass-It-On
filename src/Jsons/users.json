@@ -6,6 +6,7 @@
             "password": "123",
             "picture": "",
             "grade": "",
+            "email": "",
             "invites": [
                 {
                     "email": "",
@@ -38,6 +39,7 @@
             "password": "456",
             "picture": "",
             "grade": "",
+            "email": "",
             "invites": [
                 {
                     "email": "",
@@ -70,6 +72,7 @@
             "password": "789",
             "picture": "",
             "grade": "",
+            "email": "",
             "invites": [
                 {
                     "email": "",

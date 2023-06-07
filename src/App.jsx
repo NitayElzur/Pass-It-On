@@ -20,9 +20,9 @@ import challenges from './Jsons/challenge.json'
 
 function App() {
   useEffect(() => {
-    !localStorage.getItem('admin') && localStorage.setItem('admin', JSON.stringify(admin));
-    !localStorage.getItem('users') && localStorage.setItem('users', JSON.stringify(users));
-    !localStorage.getItem('challenges') && localStorage.setItem('challenges', JSON.stringify(challenges));
+    !localStorage.getItem('admin') && localStorage.setItem('admin', JSON.stringify(admin.admin));
+    !localStorage.getItem('users') && localStorage.setItem('users', JSON.stringify(users.users));
+    !localStorage.getItem('challenges') && localStorage.setItem('challenges', JSON.stringify(challenges.challenge));
     !localStorage.getItem('currentUser') && localStorage.setItem('currentUser', '')
   }, [admin, users, challenges])
   return (
