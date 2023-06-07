@@ -4,9 +4,13 @@ import ChallengeCard from '../ChallengeCard/ChallengeCard'
 
 function Challenges() {
   return (
-    <>
-      <ChallengeCard/>
-    </>
+    <div className='challenges'>
+      <div className='card-row'><ChallengeCard></ChallengeCard></div>
+      <div className='card-row'><ChallengeCard></ChallengeCard></div>
+      <div className='card-row'><ChallengeCard></ChallengeCard></div>
+
+    </div>
+      
   )
 }
 
