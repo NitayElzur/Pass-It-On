@@ -24,15 +24,10 @@
     width: 50%;
     background-color: antiquewhite;
     text-align: center;
-}
-
-.card-title {
-    margin-top: 10%;
-}
-
-.card-inner-info {
-    margin-top: 8%;
-    margin-right: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
 }
 
 .button {
@@ -50,6 +45,7 @@
     outline: 2px solid black;
     margin-top: 15%;
     background-color: aliceblue;
+    width: 80%;
 }
 
 button:hover {

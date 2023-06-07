@@ -1,15 +1,15 @@
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './SignUp.css'
 import { useEffect, useState } from 'react';
 function SignUp() {
     const { handleSubmit, register, formState: { errors } } = useForm();
     const [users, setUsers] = useState();
+    const navigate = useNavigate();
     useEffect(() => {
         localStorage.setItem('currentUser', '');
         setUsers(JSON.parse(localStorage.getItem('users')))
     }, [])
-    console.log(users);
     const [formData, setFormData] = useState({
         username: '',
         email: '',
@@ -52,7 +52,8 @@ function SignUp() {
                     const temp = users;
                     temp.push(user);
                     localStorage.setItem('users', JSON.stringify(temp))
-                    localStorage.setItem('currentUser', user.id)
+                    localStorage.setItem('currentUser', user.id);
+                    navigate('/profile')
                 }
             })}>
                 <p className="sign-up-form-title">Sign up</p>

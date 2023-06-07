@@ -6,29 +6,35 @@
             "isOpen": true,
             "image": "",
             "desc": "Meeting in a city park and cleaning up the area",
-            "start-date": "2023-6-7",
-            "end-date": "2023-6-14",
+            "start-date": "2023-06-07",
+            "end-date": "2023-06-14",
             "participants": [
                 {
                     "id":1,
                     "grade": "",
                     "response": "",
-                    "start_time": "2023-6-7",
-                    "end_time": "2023-6-14" 
+                    "start_time": "2023-06-07",
+                    "end_time": "2023-06-14",
+                    "final_time": "",
+                    "status": ""
                 },
                 {
                     "id":2,
                     "grade": "",
                     "response": "",
-                    "start_time": "2023-6-7",
-                    "end_time": "2023-6-14"
+                    "start_time": "2023-06-07",
+                    "end_time": "2023-06-14",
+                    "final_time": "",
+                    "status": ""
                 },
                 {
                     "id":3,
                     "grade": "",
                     "response": "",
-                    "start_time": "2023-6-7",
-                    "end_time": "2023-6-14"
+                    "start_time": "2023-06-07",
+                    "end_time": "2023-06-14",
+                    "final_time": "",
+                    "status": ""
                 }
             ]
         },
@@ -38,29 +44,35 @@
             "isOpen": true,
             "image": "",
             "desc": "Meeting in a food shelter and donating food",
-            "start-date": "2023-6-7",
-            "end-date": "2023-6-14",
+            "start-date": "2023-06-07",
+            "end-date": "2023-06-14",
             "participants": [
                 {
                     "id":1,
                     "grade": "",
                     "response": "",
-                    "start_time": "2023-6-7",
-                    "end_time": "2023-6-14" 
+                    "start_time": "2023-06-07",
+                    "end_time": "2023-06-14",
+                    "final_time": "",
+                    "status": ""
                 },
                 {
                     "id":2,
                     "grade": "",
                     "response": "",
-                    "start_time": "2023-6-7",
-                    "end_time": "2023-6-14"
+                    "start_time": "2023-06-07",
+                    "end_time": "2023-06-14",
+                    "final_time": "",
+                    "status": ""
                 },
                 {
                     "id":3,
                     "grade": "",
                     "response": "",
-                    "start_time": "2023-6-7",
-                    "end_time": "2023-6-14"
+                    "start_time": "2023-06-07",
+                    "end_time": "2023-06-14",
+                    "final_time": "",
+                    "status": ""
                 }
             ]
         },
@@ -70,29 +82,35 @@
             "isOpen": true,
             "image": "",
             "desc": "Meeting in a Homeless shelter and donating equipment",
-            "start-date": "2023-6-7",
-            "end-date": "2023-6-14",
+            "start-date": "2023-06-07",
+            "end-date": "2023-06-14",
             "participants": [
                 {
                     "id":1,
                     "grade": "",
                     "response": "",
-                    "start_time": "2023-6-7",
-                    "end_time": "2023-6-14" 
+                    "start_time": "2023-06-07",
+                    "end_time": "2023-06-14",
+                    "final_time": "",
+                    "status": ""
                 },
                 {
                     "id":2,
                     "grade": "",
                     "response": "",
-                    "start_time": "2023-6-7",
-                    "end_time": "2023-6-14"
+                    "start_time": "2023-06-07",
+                    "end_time": "2023-06-14",
+                    "final_time": "",
+                    "status": ""
                 },
                 {
                     "id":3,
                     "grade": "",
                     "response": "",
-                    "start_time": "2023-6-7",
-                    "end_time": "2023-6-14"
+                    "start_time": "2023-06-07",
+                    "end_time": "2023-06-14",
+                    "final_time": "",
+                    "status": ""
                 }
             ]
         }
