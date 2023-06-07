@@ -14,11 +14,13 @@
     font-size: 20px;
 }
 
-a {
+a{
     color: black;
     text-decoration: none;
 }
 
-button {
+button{
     cursor: pointer;
 }
+
+
