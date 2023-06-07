@@ -63,6 +63,22 @@ h2 {
     text-align: center;
 }
 
+#challenges-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--orange);
+    padding-top: 15vh;
+    padding-bottom: 15vh;
+
+}
+
+.card-div{
+    display: flex;
+    justify-content: center;
+
+}
+
 /* Responsive Styles */
 
 @media (max-width: 768px) {

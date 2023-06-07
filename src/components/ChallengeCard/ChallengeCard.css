@@ -1,7 +1,7 @@
 #challenge-card-main {
     width: 70%;
     background-color: var(--white);
-    height: 60vh;
+    height: 65vh;
     border-radius: 10px;
     margin-top: 5vh;
     margin-bottom: 5vh;
@@ -11,27 +11,67 @@
     border-width: 5px;
     border-color: white;
     border-radius: 15px;
-   overflow: hidden;
+    overflow: hidden;
 }
 
 .challenge-card-img {
-    height: 60vh;
+    height: 65vh;
     width: 50%;
 }
 
 .card-inner-text {
-    height: 60vh;
+    height: 65vh;
     width: 50%;
-    background-color: var(--yellow);
+    background-color: antiquewhite;
     text-align: center;
 }
 
-.challenge-card-title{
+.card-title {
     margin-top: 10%;
-
 }
 
-.card-inner-description{
-    
+.card-inner-info {
+    margin-top: 8%;
+    margin-right: 50%;
 }
 
+.button {
+    padding: 1em 2em;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: black;
+    transition: all 1000ms;
+    font-size: 15px;
+    position: relative;
+    overflow: hidden;
+    outline: 2px solid black;
+    margin-top: 15%;
+    background-color: aliceblue;
+}
+
+button:hover {
+    color: black;
+    transform: scale(1.1);
+    outline: 2px solid black;
+    box-shadow: 4px 5px 17px -4px black;
+}
+
+button::before {
+    content: "";
+    position: absolute;
+    left: -50px;
+    top: 0;
+    width: 0;
+    height: 100%;
+    background-color: var(--orange);
+    transform: skewX(45deg);
+    z-index: -1;
+    transition: width 1000ms;
+}
+
+button:hover::before {
+    width: 250%;
+}
