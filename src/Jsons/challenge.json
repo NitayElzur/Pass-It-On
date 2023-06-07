@@ -6,20 +6,93 @@
             "isOpen": true,
             "image": "",
             "desc": "Meeting in a city park and cleaning up the area",
-            "start-date": "",
-            "end-date": "",
+            "start-date": "2023-6-7",
+            "end-date": "2023-6-14",
             "participants": [
                 {
+                    "id":1,
                     "grade": "",
-                    "response": ""
+                    "response": "",
+                    "start_time": "2023-6-7",
+                    "end_time": "2023-6-14" 
                 },
                 {
+                    "id":2,
                     "grade": "",
-                    "response": ""
+                    "response": "",
+                    "start_time": "2023-6-7",
+                    "end_time": "2023-6-14"
                 },
                 {
+                    "id":3,
                     "grade": "",
-                    "response": ""
+                    "response": "",
+                    "start_time": "2023-6-7",
+                    "end_time": "2023-6-14"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Food Donation",
+            "isOpen": true,
+            "image": "",
+            "desc": "Meeting in a food shelter and donating food",
+            "start-date": "2023-6-7",
+            "end-date": "2023-6-14",
+            "participants": [
+                {
+                    "id":1,
+                    "grade": "",
+                    "response": "",
+                    "start_time": "2023-6-7",
+                    "end_time": "2023-6-14" 
+                },
+                {
+                    "id":2,
+                    "grade": "",
+                    "response": "",
+                    "start_time": "2023-6-7",
+                    "end_time": "2023-6-14"
+                },
+                {
+                    "id":3,
+                    "grade": "",
+                    "response": "",
+                    "start_time": "2023-6-7",
+                    "end_time": "2023-6-14"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Homeless Shelter Donation",
+            "isOpen": true,
+            "image": "",
+            "desc": "Meeting in a Homeless shelter and donating equipment",
+            "start-date": "2023-6-7",
+            "end-date": "2023-6-14",
+            "participants": [
+                {
+                    "id":1,
+                    "grade": "",
+                    "response": "",
+                    "start_time": "2023-6-7",
+                    "end_time": "2023-6-14" 
+                },
+                {
+                    "id":2,
+                    "grade": "",
+                    "response": "",
+                    "start_time": "2023-6-7",
+                    "end_time": "2023-6-14"
+                },
+                {
+                    "id":3,
+                    "grade": "",
+                    "response": "",
+                    "start_time": "2023-6-7",
+                    "end_time": "2023-6-14"
                 }
             ]
         }

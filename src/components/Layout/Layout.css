@@ -7,12 +7,12 @@
 
 .top-nav{
     height: 100px;
-    background-color: var(--pink);
+    background-color: var(--white);
 }
 
 .bot-nav{
     height: 100px;
-    background-color:var(--pink);
+    background-color:var(--white);
 }
 
 .top-nav-links-div{
@@ -23,4 +23,13 @@
 .bot-nav-links-div{
     display: flex;
     justify-content: space-around;
+}
+
+#main-content {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--pink);
+    padding: 5vh 5vw;
 }
