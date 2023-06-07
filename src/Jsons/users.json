@@ -2,8 +2,8 @@
     "users": [
         {
             "id": 1,
-            "username": "",
-            "password": "",
+            "username": "123",
+            "password": "123",
             "picture": "",
             "grade": "",
             "invites": [
@@ -22,11 +22,80 @@
             ],
             "challenges": [
                 {
-                    "id": "",
-                    "title": ""
-
+                    "id": 1
+                },
+                {
+                    "id": 2
+                },
+                {
+                    "id": 3
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "username": "456",
+            "password": "456",
+            "picture": "",
+            "grade": "",
+            "invites": [
+                {
+                    "email": "",
+                    "accepted": false
+                },
+                {
+                    "email": "",
+                    "accepted": false
+                },
+                {
+                    "email": "",
+                    "accepted": false
+                }
+            ],
+            "challenges": [
+                {
+                    "id": 1
+                },
+                {
+                    "id": 2
+                },
+                {
+                    "id": 3
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "username": "789",
+            "password": "789",
+            "picture": "",
+            "grade": "",
+            "invites": [
+                {
+                    "email": "",
+                    "accepted": false
+                },
+                {
+                    "email": "",
+                    "accepted": false
+                },
+                {
+                    "email": "",
+                    "accepted": false
+                }
+            ],
+            "challenges": [
+                {
+                    "id": 1
+                },
+                {
+                    "id": 2
+                },
+                {
+                    "id": 3
                 }
             ]
         }
+        
     ]
 }

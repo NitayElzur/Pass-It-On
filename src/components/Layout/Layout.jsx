@@ -22,13 +22,14 @@ function Layout() {
 
 
       </nav>
-
-      <Outlet></Outlet>
+      <div id='main-content'>
+        <Outlet></Outlet>
+      </div>
 
       <nav className='bot-nav'>
         <div className='bot-nav-links-div'>
-        <Link to="/contact">Contact</Link>
-        <Link to="/about">About</Link>
+          <Link to="/contact">Contact</Link>
+          <Link to="/about">About</Link>
         </div>
 
 

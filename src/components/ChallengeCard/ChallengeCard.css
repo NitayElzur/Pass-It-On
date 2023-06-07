@@ -1,0 +1,6 @@
+#challenge-card-main {
+    width: 60%;
+    background-color: var(--white);
+    height: 30vh;
+    border-radius: 10px;
+}

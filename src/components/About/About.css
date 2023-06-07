@@ -2,4 +2,26 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    
+}
+#center{
+    text-align: center;
+}
+#img-container{
+   
+    
+}
+#about-us{
+    font-size:6ch;
+}
+#about-img{
+    height: 30vh;
+    width: 26vw;
+}
+#img-placement{
+    
+}
+#about-img2{
+    height: 16.5vh;
+    width: 15vw;
 }

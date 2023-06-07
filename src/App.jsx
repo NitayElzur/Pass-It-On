@@ -11,6 +11,8 @@ import Profile from './components/Profile/Profile'
 import Vote from './components/Vote/Vote'
 import  Calendar  from './components/Calendar/Calendar';
 import { Routes, Route } from "react-router-dom";
+import Login from './components/Login/Login';
+import SignUp from './components/SignUp/SignUp';
 
 
 function App() {
@@ -27,7 +29,8 @@ function App() {
           <Route path='profile' element={<Profile/>}></Route>
           <Route path='vote' element={<Vote/>}></Route>
           <Route path='calendar' element={<Calendar/>}></Route>
-
+          <Route path='login' element={<Login/>}></Route>
+          <Route path='sign-up' element={<SignUp/>}></Route>
     
         
         </Route>
