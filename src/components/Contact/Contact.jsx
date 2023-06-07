@@ -7,8 +7,8 @@ import {MdLocationOn} from 'react-icons/md'
 function Contact() {
   return (
     <div>
-      <div className='contact_header'>
-        <h1>Contact Us</h1>
+      <div className='contact-container'>
+      <h1 id='contact-us-title'>Contact us</h1>
       </div>
       <div className='contact_link_exp_div'> 
         <div  className='contact_exp_div'>
