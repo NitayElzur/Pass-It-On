@@ -5,17 +5,23 @@ import { useEffect, useState } from 'react';
 function SignUp() {
     const { handleSubmit, register, formState: { errors } } = useForm();
     const [users, setUsers] = useState();
+    console.log(users);
     const navigate = useNavigate();
-    useEffect(() => {
-        localStorage.setItem('currentUser', '');
-        setUsers(JSON.parse(localStorage.getItem('users')))
-    }, [])
     const [formData, setFormData] = useState({
         username: '',
         email: '',
         password: '',
         password2: ''
     })
+    useEffect(() => {
+        localStorage.setItem('currentUser', '');
+        setUsers(JSON.parse(localStorage.getItem('users')))
+    }, [])
+    
+    function SendToHomePage() {
+         navigate('/login')
+    }
+
     return (
         <>
 
@@ -49,10 +55,17 @@ function SignUp() {
                         "challenges": [
                         ]
                     }
+<<<<<<< HEAD
                     const temp = users;
                     temp.push(user);
                     console.log(temp);
                     localStorage.setItem('users', JSON.stringify(temp))
+=======
+                    const updatedUsers = [...users, user]; // create a new array with the updated values
+                    console.log(users);
+                    localStorage.setItem('users', JSON.stringify(updatedUsers));
+                    setUsers(updatedUsers);
+>>>>>>> c47a846 ( 11.0)
                     localStorage.setItem('currentUser', user.id);
                 }
             })}>
@@ -80,7 +93,7 @@ function SignUp() {
                     <button button className="sign-up-submit" type="submit">Sign In</button>
                 <p className="signup-link">
                     Already have an account?
-                <button className="sign-up-submit" type="submit">Sign up</button>
+                <button onClick={SendToHomePage} className="sign-up-submit" type="submit">Sign up</button>
                 </p>
             </form>
 

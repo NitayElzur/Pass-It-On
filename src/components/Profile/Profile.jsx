@@ -25,6 +25,9 @@ function Profile({ id }) {
     })))
   }, [data])
 
+  useEffect(() => {
+    setCompletedChal(challenges?.filter((challenge, i) => data?.challenges.find(ch=> ch.id==i+1)?.status=='completed'))
+  }, [data])
 
   function isCompleted(element) {
     if (element?.participants?.find(value => value?.id == user)?.status == "completed") return true
