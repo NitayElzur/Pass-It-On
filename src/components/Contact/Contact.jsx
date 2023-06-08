@@ -7,8 +7,8 @@ import {MdLocationOn} from 'react-icons/md'
 function Contact() {
   return (
     <div>
-      <div className='contact-container'>
-      <h1 id='contact-us-title'>Contact us</h1>
+      <div className='contact_header'>
+        <h1 id='contact-title'>Contact Us</h1>
       </div>
       <div className='contact_link_exp_div'> 
         <div  className='contact_exp_div'>
@@ -16,11 +16,11 @@ function Contact() {
         </div>
 
         <div className='contact_links_div'>
-          <div className='contact_link'><span className='span_pic'><AiFillPhone/></span><a href="tel:123-456-7890"> Call Us</a></div>
+          <div className='contact_link'><span className='span_pic'><AiFillPhone/></span><a className='deep-links' href="tel:123-456-7890"> Call Us</a></div>
 
-          <div className='contact_link'><span className='span_pic'><AiOutlineMail/></span><a href="mailto: Passit_on@gmail.com"> Send Us an Email</a></div>
+          <div className='contact_link'><span className='span_pic'><AiOutlineMail/></span><a className='deep-links' href="mailto: Passit_on@gmail.com"> Send Us an Email</a></div>
 
-          <div className='contact_link'><span className='span_pic'><MdLocationOn/></span><a target='blank' href="https://goo.gl/maps/ZVAjA4qYsaESeDPh8"> Ha-Khilazon Street, Ramat Gan, Israel</a></div>
+          <div className='contact_link'><span className='span_pic'><MdLocationOn/></span><a className='deep-links' target='blank' href="https://goo.gl/maps/ZVAjA4qYsaESeDPh8"> Ha-Khilazon Street, Ramat Gan, Israel</a></div>
         </div>
       </div>
     </div>

@@ -4,31 +4,44 @@
     box-sizing: border-box;
 }
 
+#contact-title{
+    margin-top: 10vh;
+    margin-bottom: 5vh;
+    color: white;
+}
+
 .contact_link_exp_div{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     justify-items: center;
-    padding: 3%;
+    padding-bottom: 5vh;
+    color: white;
 
 }
 
 .contact_links_div{
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
     justify-items: center ;
     width: 40vw;
+    color: white;
+    text-align: start;
+    margin-left: 5vw;
 }
 
 .contact_exp_div{
     text-align: center;
     width: 40vw;
     font-size: xx-large;
+    color: white;
 }
 
 .contact_link{
     font-size: xx-large;
+    color: white;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
 }
 .contact_header{
     display: flex;
@@ -36,10 +49,18 @@
     justify-content: space-around;
     align-items: center ;
     font-size: 30px;
+    color: white;
 }
 
 .span_pic{
-    size: 45;
+    
+    margin-right: 1vw;
+}
+
+.deep-links{
+    color: white;
+    font-size: 2vw;
+
 }
 
 @media screen and (max-width: 768px) {
