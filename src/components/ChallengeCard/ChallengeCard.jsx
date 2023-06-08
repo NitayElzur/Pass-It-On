@@ -1,10 +1,13 @@
+import { AdvancedImage } from '@cloudinary/react';
 import './ChallengeCard.css'
+import { Cloudinary } from '@cloudinary/url-gen';
+import {fill, fit, scale} from '@cloudinary/url-gen/actions/resize'
 function ChallengeCard({ value, editable, edit, setEdit }) {
     let currentUser = localStorage.getItem("currentUser")
     let users = JSON.parse(localStorage.getItem("users"))
     let challenges = JSON.parse(localStorage.getItem("challenges"))
     function isUser(value) {
-        if (currentUser && (!users?.find(value => value.id == currentUser).username.includes("admin"))) return true;
+        if (currentUser && (!users?.find(value => value.id == currentUser)?.username.includes("admin"))) return true;
         return false
     }
     function joinChallenge(value) {
@@ -35,10 +38,15 @@ function ChallengeCard({ value, editable, edit, setEdit }) {
         alert("You succesfuly joined the challenge")
         return
     }
+    const cld = new Cloudinary({
+        cloud: {
+            cloudName: 'dol6p0ex8'
+        }
+    })
     return (
 
         <div id='challenge-card-main'>
-            <img className='challenge-card-img' src={value?.picture} alt="" />
+            <img id='challengePic' src={value.image} alt="" />
             <div className='card-inner-text'>
 
                 <h1 className='card-title'>{value?.title}</h1>
@@ -52,10 +60,13 @@ function ChallengeCard({ value, editable, edit, setEdit }) {
                 <h3 className='card-inner-info'>
                     {`End Date: ${value && value['end-date']}`}
                 </h3>
+                <h3>
+                    {`Status: ${value?.isOpen? 'Open' : 'Closed'}`}
+                </h3>
 
                 {editable
                     ?
-                    <button className='button' onClick={() => {
+                    <button className='join-btn' onClick={() => {
                         setEdit(true)
                     }}>Edit</button>
                     :

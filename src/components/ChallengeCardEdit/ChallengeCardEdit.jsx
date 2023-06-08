@@ -18,7 +18,6 @@ function ChallengeCardEdit({ value }) {
             cloudName: 'dol6p0ex8'
         }
     })
-    const myImage = cld.image(value.image)
     return (
         <>
             <div id='editCardMain'>
@@ -26,6 +25,7 @@ function ChallengeCardEdit({ value }) {
                     ?
                     <form id='editCard' onSubmit={handleSubmit(() => {
                         localStorage.setItem('challenges', JSON.stringify(data?.map(v => (v.id === formData.id) ? formData : v)))
+                        setEdit(false)
                     })}>
                         {`Edit ${value.title}:`} <br /><br />
                         <div className="editCardInputDiv">
@@ -42,8 +42,8 @@ function ChallengeCardEdit({ value }) {
                         </div>
                         <div className="editCardInputDiv">
                             Image:
-                            <AdvancedImage cldImg={myImage} />
                             <UploadWidget formData={formData} setFormData={setFormData} />
+                            <img src={formData.image} alt="" />
                         </div>
                         <div className="editCardInputDiv">
                             Description:
