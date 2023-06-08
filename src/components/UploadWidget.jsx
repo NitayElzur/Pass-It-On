@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
+import './UploadWidget.css'
 
-function UploadWidget() {
+function UploadWidget({formData, setFormData}) {
     const cloudinaryRef = useRef();
     const widgetRef = useRef();
     useEffect(() => {
@@ -35,12 +36,13 @@ function UploadWidget() {
                 }
             }
         }, function (error, result) {
-            console.log(result);
+            console.log(result.event === 'success' && result.info['public_id']);
+            result.event === 'success' && setFormData({...formData, image: result.info['public_id']})
         })
     }, [])
     return (
         <>
-            <button type="button" onClick={() => {
+            <button id="widgetButton" type="button" onClick={() => {
                 widgetRef.current.open();
             }}>Upload</button>
         </>

@@ -20,11 +20,11 @@ function ChallengeCard({ value, editable, edit, setEdit }) {
 
                 {editable
                     ?
-                    <button className='button' onClick={() => {
+                    <button className='join-btn' onClick={() => {
                         setEdit(true)
                     }}>Edit</button>
                     :
-                    <button className="button">Join Challenge</button>
+                    <button className="join-btn">Join Challenge</button>
                 }
 
             </div>
