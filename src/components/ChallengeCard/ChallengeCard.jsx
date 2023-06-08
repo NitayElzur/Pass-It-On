@@ -11,13 +11,13 @@ function ChallengeCard({ value, editable, edit, setEdit }) {
         return false
     }
     function joinChallenge(value) {
-        if (value.participants?.find(Element => Element.id == currentUser.id)) {
+        if (value.participants?.find(Element => Element.id == currentUser)) {
             alert("You have already joined this challenge")
             return
         }
         const date = new Date()
         currentUser.challenges?.push({
-            id: currentUser.id,
+            id: currentUser,
             grade: "",
             Response: "",
             start_time: date,
@@ -25,7 +25,7 @@ function ChallengeCard({ value, editable, edit, setEdit }) {
             status: "signed"
         })
         for (let i = 0; i < users?.length; i++) {
-            if (users[i].id == currentUser.id) {
+            if (users[i].id == currentUser) {
                 users[i].challenges.push({
                     id: value.id,
                     status: "signed"
@@ -69,7 +69,7 @@ function ChallengeCard({ value, editable, edit, setEdit }) {
                         setEdit(true)
                     }}>Edit</button>
                     :
-                    isUser() && <button className="join-btn" onClick={() => joinChallenge(value.id)}>Join Challenge</button>
+                    isUser() && <button className="join-btn" onClick={() => joinChallenge(value)}>Join Challenge</button>
                 }
 
             </div>

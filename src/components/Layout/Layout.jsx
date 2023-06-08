@@ -1,13 +1,12 @@
-import React, { useEffect } from 'react'
 import { Outlet, Link } from "react-router-dom";
-import { useState } from "react";
+import {Context} from '../../context/context'
+import { useEffect, useState,useContext } from 'react';
 import '../Layout/Layout.css'
 
 function Layout() {
-  const [userType, setUserType] = useState('');
+  const {userType, setUserType} = useContext(Context)
   const current = localStorage.getItem('currentUser')
   useEffect(() => {
-
     if (current) {
       if (current.includes('admin')) {
         setUserType('admin')
@@ -32,11 +31,10 @@ function Layout() {
           <img id='logo' src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Heart-hand-shake.svg/640px-Heart-hand-shake.svg.png" alt="" />
           <Link to="/">Home</Link>
           {userType === 'admin' && <Link to="/addeditchallenges">Add/Edit Challenge</Link>}
-          {userType === 'user' && <Link to="/vote">Vote</Link>}
           {userType === 'admin' && <Link to="/calendar">Calendar</Link>}
           {userType === 'visitor' && <Link to="/login">Login</Link>}
           {userType === 'user' && <Link to="/profile">Profile</Link>}
-          {(userType === 'admin' || userType === 'user') && <Link to="/login">Sign out</Link>}
+          {(userType === 'admin' || userType === 'user') && <Link onClick={()=>location.reload()} to="/login">Sign out</Link>}
         </div>
 
       </div>

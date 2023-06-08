@@ -4,7 +4,6 @@ import ChallengeCard from '../ChallengeCard/ChallengeCard'
 
 function Home() {
   let challenges=JSON.parse(localStorage.getItem("challenges"));
-  console.log();
   return (
     <div id="container">
 
