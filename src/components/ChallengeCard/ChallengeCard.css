@@ -43,7 +43,8 @@
     position: relative;
     overflow: hidden;
     outline: 2px solid black;
-    margin-top: 15%;
+    margin-top: 10%;
+    margin-bottom: 10%;
     background-color: aliceblue;
     width: 80%;
 }
@@ -62,7 +63,7 @@
     top: 0;
     width: 0;
     height: 100%;
-    background-color: var(--orange);
+    background-color: #d25380;
     transform: skewX(45deg);
     z-index: -1;
     transition: width 1000ms;
@@ -73,10 +74,14 @@
 }
 
 .card-title{
-    
+    margin-top: 5vh;
+    padding: 0 1vw;
 }
 
 #challengePic {
     width: 50%;
     height: 100%;
+}
+.card-inner-info{
+    padding: 0 1vw;
 }

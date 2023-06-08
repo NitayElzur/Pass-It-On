@@ -1,9 +1,12 @@
 import { useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
 import './Login.css'
-import { useEffect, useState } from 'react';
+import { useEffect, useState,useContext } from 'react';
+import {Context} from '../../context/context'
+
 
 function Login() {
+    const {userType, setUserType} = useContext(Context)
     const { formState = { errors }, register, handleSubmit, } = useForm()
     const [data, setData] = useState([]);
     const [adminData, setAdminData] = useState([]);
@@ -18,12 +21,13 @@ function Login() {
         localStorage.setItem('currentUser', '')
     }, [])
     return (
-        <form className="login-form" onSubmit={handleSubmit((e) => {
+        <form className="login-form" onSubmit={handleSubmit(
+            (e) => {
             console.log(adminData);
             if (adminData?.some(v => v.username === e.username && v.password === e.password)) {
                 localStorage.setItem('currentUser', adminData.find(v => v.id).id);
                 setAdminData([])
-                navigate('/')
+                // navigate('/')
             }
             else {
                 if (!data.some(v => v.username === e.username)) {
@@ -37,7 +41,8 @@ function Login() {
                 else {
                     localStorage.setItem('currentUser', JSON.stringify(data.filter(v => v.username === e.username && v.password === e.password)[0].id))
                     setData([])
-                    navigate('/profile')
+                    setUserType('user')
+                    navigate('/')
                 }
             }
         })}>

@@ -18,11 +18,7 @@ function Calendar() {
       color: getColor(item['start-date'], item['end-date'], item.isOpen)
     }));
 
-    setEvents([...tempArr, {
-      start: '2023-06-01',
-      end: '2023-06-05',
-      title: 'ended'
-    }]);
+    setEvents([...tempArr]);
   }, []);
 
   const handleDateSelect = (selectInfo) => {

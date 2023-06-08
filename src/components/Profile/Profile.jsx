@@ -15,15 +15,15 @@ function Profile({ id }) {
   }, [])
 
   useEffect(() => {
-    setSignedChal(challenges.filter((challenge, i) => challenge.isOpen && data.challenges.find(ch=> ch.id==i+1).status !== 'completed'))
+    setSignedChal(challenges?.filter((challenge, i) => challenge.isOpen && data?.challenges?.find(ch=> ch.id==i+1).status !== 'completed'))
   }, [data])
 
   useEffect(() => {
-    setCompletedChal(challenges.filter((challenge, i) => data.challenges.find(ch=> ch.id==i+1).status=='completed'))
+    setCompletedChal(challenges?.filter((challenge, i) => data?.challenges.find(ch=> ch.id==i+1).status=='completed'))
   }, [data])
 
   function isCompleted(element) {
-    if (element.participants?.find(value => value.id == user).status == "completed") return true
+    if (element?.participants?.find(value => value.id == user).status == "completed") return true
     return false
   }
   return (
@@ -54,40 +54,35 @@ function Profile({ id }) {
       </div>
 
       <div className='challenges_scrollers'>
-        <div>
-          Your signed to Challenges
+        <div className='current-challenges-div'>
+          <h6 className='current-challenges-title'>Your signed to Challenges</h6>
           <br />
           <div className='challenges_scroller_signed'>
             {signedChal &&
               signedChal.map((value, index) => {
                 return (
                   <div className='challenge_info'>
-                    <div className='challenge_pic'><img src={value?.image} /></div>
-                    <div className='challenge_title'>{value?.title}</div>
-                    {/* <div>
-                      {
-                        !isCompleted(value) && <button onClick={() => addPic()}>Add a picture </button>
-                      }
-                    </div>
-                    <div>
-                      {Complete_msg(value)}
-                    </div> */}
+                     <div className='challenge_title'>{value?.title}</div>
+                    <div><img className='challenge-pic' src={value?.image} /></div>
+                   
                   </div>
                 )
               })
             }
           </div>
         </div>
-        <div>
-          Your Completed Challenges
+        <div id='your-completed-challenges'>
+
+        <h6 className='current-challenges-title'>Your Completed Challenges</h6>
           <br />
           <div className='challenges_scroller_completed'>
             {
               completedChal && completedChal.map((value, index) => {
                 return (
                   <div className='challenge_info'>
-                    <div className='challenge_pic'><img src={value.image} /></div>
-                    <div className='challenge_title'>{value.title}</div>
+                     <div className='challenge_title'>{value.title}</div>
+                    <div><img id='passed-challenges' src={value.image} /></div>
+                   
                   </div>
                 )
               })

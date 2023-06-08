@@ -53,7 +53,6 @@ function SignUp() {
                     temp.push(user);
                     localStorage.setItem('users', JSON.stringify(temp))
                     localStorage.setItem('currentUser', user.id);
-                    navigate('/profile')
                 }
             })}>
                 <p className="sign-up-form-title">Sign up</p>
@@ -76,13 +75,11 @@ function SignUp() {
                     <input placeholder="Enter password again" value={formData.password2} onInput={e => setFormData({ ...formData, password2: e.target.value })} type="password" {
                         ...register("password2", { required: true })
                     } />
-                </div>
-                <button className="sign-up-submit" type="submit">
-                    Sign up
-                </button>
+                </div>  
+                    <button button className="sign-up-submit" type="submit">Sign In</button>
                 <p className="signup-link">
                     Already have an account?
-                    <Link to={'/login'}>Sign In</Link>
+                <button className="sign-up-submit" type="submit">Sign up</button>
                 </p>
             </form>
 

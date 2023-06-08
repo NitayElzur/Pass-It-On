@@ -128,5 +128,32 @@
 .profile_info{
     background-color: #e08e6d;
     height: 30vh;
-    width: 80vw;
+  
+}
+
+.challenge-pic{
+    height: 500px;
+    width: 500px;
+    margin-top: 5vh;
+}
+
+#current-challenges-div{
+    /*  */
+}
+
+.current-challenges-title{
+    font-size: 2.5vw;
+}
+
+#passed-challenges{
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    height: 40vh;
+    width: 40vw;
+    
+}
+
+#your-completed-challenges{
+    margin-left: 5vw;
+
 }
