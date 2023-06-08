@@ -4,10 +4,10 @@
             "id": 1,
             "username": "nitay",
             "password": "123",
-            "picture": "",
-            "grade": "",
-            "email": "",
-            "phone": "",
+            "picture": "https://i.pinimg.com/originals/f1/0f/f7/f10ff70a7155e5ab666bcdd1b45b726d.jpg",
+            "grade": "15",
+            "email": "jkhlksdjhgljksdfh",
+            "phone": "1234567890",
             "invites": [
                 {
                     "email": "",
@@ -24,13 +24,16 @@
             ],
             "challenges": [
                 {
-                    "id": 1
+                    "id": 1,
+                    "status": ""
                 },
                 {
-                    "id": 2
+                    "id": 2,
+                    "status": ""
                 },
                 {
-                    "id": 3
+                    "id": 3,
+                    "status": ""
                 }
             ]
         },
@@ -58,13 +61,16 @@
             ],
             "challenges": [
                 {
-                    "id": 1
+                    "id": 1,
+                    "status": ""
                 },
                 {
-                    "id": 2
+                    "id": 2,
+                    "status": ""
                 },
                 {
-                    "id": 3
+                    "id": 3,
+                    "status": ""
                 }
             ]
         },
@@ -92,13 +98,16 @@
             ],
             "challenges": [
                 {
-                    "id": 1
+                    "id": 1,
+                    "status": ""
                 },
                 {
-                    "id": 2
+                    "id": 2,
+                    "status": ""
                 },
                 {
-                    "id": 3
+                    "id": 3,
+                    "status": ""
                 }
             ]
         }
