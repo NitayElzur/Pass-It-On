@@ -46,9 +46,9 @@ function ChallengeCardEdit({ value }) {
                 {edit
                     ?
                     <form id='editCard' onSubmit={handleSubmit(() => {
+                        !(formData.isOpen) && pointCalc()
                         localStorage.setItem('challenges', JSON.stringify(data?.map(v => (v.id === formData.id) ? { ...formData } : { ...v })))
                         setEdit(false)
-                        !(formData.isOpen) && pointCalc()
                         // console.log(!(formData.isOpen) && 'he');
                     })}>
                         {`Edit ${value.title}:`} <br /><br />
