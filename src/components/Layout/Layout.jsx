@@ -35,6 +35,7 @@ function Layout() {
           {userType === 'user' && <Link to="/vote">Vote</Link>}
           {userType === 'admin' && <Link to="/calendar">Calendar</Link>}
           {userType === 'visitor' && <Link to="/login">Login</Link>}
+          {userType === 'user' && <Link to="/profile">Profile</Link>}
           {(userType === 'admin' || userType === 'user') && <Link to="/login">Sign out</Link>}
         </div>
 
