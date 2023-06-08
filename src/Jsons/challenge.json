@@ -4,7 +4,7 @@
             "id": 1,
             "title": "Garbage Cleanup",
             "isOpen": true,
-            "image": "",
+            "image": "https://www.redwoodcity.org/home/showpublishedimage/14286/636754548190830000",
             "desc": "Meeting in a city park and cleaning up the area",
             "start-date": "2023-06-07",
             "end-date": "2023-06-14",
@@ -42,7 +42,7 @@
             "id": 2,
             "title": "Food Donation",
             "isOpen": true,
-            "image": "",
+            "image": "https://npr.brightspotcdn.com/dims4/default/06a3eb5/2147483647/strip/true/crop/3000x2000+0+0/resize/880x587!/quality/90/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F31%2F5b%2Fcc7cc0b042b7b54623e657545f78%2Fgettyimages-1286048476x.jpg",
             "desc": "Meeting in a food shelter and donating food",
             "start-date": "2023-06-07",
             "end-date": "2023-06-14",
@@ -54,7 +54,7 @@
                     "start_time": "2023-06-07",
                     "end_time": "2023-06-14",
                     "final_time": "",
-                    "status": ""
+                    "status": "completed"
                 },
                 {
                     "id":2,
@@ -80,7 +80,7 @@
             "id": 3,
             "title": "Homeless Shelter Donation",
             "isOpen": true,
-            "image": "",
+            "image": "https://news.utexas.edu/wp-content/uploads/2019/11/Homeless.jpg",
             "desc": "Meeting in a Homeless shelter and donating equipment",
             "start-date": "2023-06-07",
             "end-date": "2023-06-14",
@@ -92,7 +92,7 @@
                     "start_time": "2023-06-07",
                     "end_time": "2023-06-14",
                     "final_time": "",
-                    "status": ""
+                    "status": "signed"
                 },
                 {
                     "id":2,

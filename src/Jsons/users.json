@@ -6,7 +6,7 @@
             "password": "123",
             "picture": "https://i.pinimg.com/originals/f1/0f/f7/f10ff70a7155e5ab666bcdd1b45b726d.jpg",
             "grade": "15",
-            "email": "jkhlksdjhgljksdfh",
+            "email": "nitay123@gmail.com",
             "phone": "1234567890",
             "invites": [
                 {
@@ -25,15 +25,15 @@
             "challenges": [
                 {
                     "id": 1,
-                    "status": ""
+                    "status": "completed"
                 },
                 {
                     "id": 2,
-                    "status": ""
+                    "status": "completed"
                 },
                 {
                     "id": 3,
-                    "status": ""
+                    "status": "signed"
                 }
             ]
         },

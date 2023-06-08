@@ -1,4 +1,4 @@
-import { AdvancedImage } from '@cloudinary/react';
+import React, { useState } from 'react';
 import './ChallengeCard.css'
 import { Cloudinary } from '@cloudinary/url-gen';
 import {fill, fit, scale} from '@cloudinary/url-gen/actions/resize'
@@ -13,7 +13,6 @@ function ChallengeCard({ value, editable, edit, setEdit }) {
     function joinChallenge(value) {
         if (value.participants?.find(Element => Element.id == currentUser.id)) {
             alert("You have already joined this challenge")
-            console.log('hello');
             return
         }
         const date = new Date()
@@ -23,13 +22,13 @@ function ChallengeCard({ value, editable, edit, setEdit }) {
             Response: "",
             start_time: date,
             end_time: "",
-            status: ""
+            status: "signed"
         })
         for (let i = 0; i < users?.length; i++) {
             if (users[i].id == currentUser.id) {
                 users[i].challenges.push({
                     id: value.id,
-                    status: ""
+                    status: "signed"
                 })
             }
         }
@@ -46,7 +45,7 @@ function ChallengeCard({ value, editable, edit, setEdit }) {
     return (
 
         <div id='challenge-card-main'>
-            <img id='challengePic' src={value.image} alt="" />
+            <img className='challenge-card-img' src={value?.image} alt="" />
             <div className='card-inner-text'>
 
                 <h1 className='card-title'>{value?.title}</h1>

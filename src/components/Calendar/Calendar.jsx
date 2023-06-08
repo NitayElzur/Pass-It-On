@@ -3,26 +3,35 @@ import FullCalendar from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import interactionPlugin from '@fullcalendar/interaction';
-import { useState } from 'react'
+import { useState } from 'react';
 
 function Calendar() {
-  const [events, setEvents] = useState([])
+  const [events, setEvents] = useState([]);
   const Challenges = JSON.parse(localStorage.getItem('challenges'));
+
   useEffect(() => {
-    Challenges.map(item =>
-      setEvents(prevEvents => [
-        ...prevEvents,
-        { id: generateId(), start: item['start-date'], end: item['end-date'], title: item.title }
-      ])
-    );
+    const tempArr = Challenges?.map(item => ({
+      start: item['start-date'],
+      end: item['end-date'],
+      title: item.title,
+      isOpened: item.isOpen,
+      color: getColor(item['start-date'], item['end-date'], item.isOpen)
+    }));
+
+    setEvents([...tempArr, {
+      start: '2023-06-01',
+      end: '2023-06-05',
+      title: 'ended'
+    }]);
   }, []);
 
   const handleDateSelect = (selectInfo) => {
     const calendarApi = selectInfo.view.calendar;
     const title = prompt('Event Title:');
+
     if (title) {
       calendarApi.addEvent({
-        id: generateId(), // Generate a unique ID for the event
+        id: generateId(),
         title,
         start: selectInfo.startStr,
         end: selectInfo.endStr,
@@ -37,10 +46,22 @@ function Calendar() {
     }
   };
 
+  const getColor = (start, end, isOpen) => {
+    const currentDate = new Date().toISOString().split('T')[0];
+
+    if (isOpen) {
+      if (start <= currentDate && currentDate <= end) {
+        return 'green'; // Current event
+      } else if (eventEndDate < currentDate) {
+        return 'red'; // Passed event
+      }
+    }
+    return 'blue'; // Future event
+  };
+
   const generateId = () => {
     return Math.random().toString(36).substr(2, 9);
   };
-  console.log(events);
 
   return (
     <div>
@@ -52,10 +73,11 @@ function Calendar() {
           center: 'title',
           end: 'dayGridMonth,timeGridWeek,timeGridDay',
         }}
-        height={'80vh'}
-        selectable={true} // Enable date selection
-        select={handleDateSelect} // Handle date selection
-        eventClick={handleEventClick} // Handle event click
+        events={events}
+        height={'90vh'}
+        selectable={true}
+        select={handleDateSelect}
+        eventClick={handleEventClick}
       />
     </div>
   );
