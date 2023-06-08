@@ -36,7 +36,6 @@ function UploadWidget({formData, setFormData}) {
                 }
             }
         }, function (error, result) {
-            console.log(result.event === 'success' && result.info);
             result.event === 'success' && setFormData({...formData, image: result.info.url})
         })
     }, [])

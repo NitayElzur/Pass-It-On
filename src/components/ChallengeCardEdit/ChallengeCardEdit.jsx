@@ -3,29 +3,53 @@ import ChallengeCard from '../ChallengeCard/ChallengeCard';
 import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import UploadWidget from '../UploadWidget';
-import { Cloudinary } from '@cloudinary/url-gen';
-import { AdvancedImage } from '@cloudinary/react';
 function ChallengeCardEdit({ value }) {
     const [edit, setEdit] = useState(false);
     const { register, handleSubmit, formState: { errors } } = useForm();
     const [formData, setFormData] = useState(value);
-    const [data, setData] = useState()
+    const [data, setData] = useState(); 
+    const [users, setUsers] = useState();
     useEffect(() => {
-        setData(JSON.parse(localStorage.getItem('challenges')))
+        setData(JSON.parse(localStorage.getItem('challenges')));
+        setUsers(JSON.parse(localStorage.getItem('users')))
     }, [])
-    const cld = new Cloudinary({
-        cloud: {
-            cloudName: 'dol6p0ex8'
-        }
-    })
+    function calcFinal(start, end, status) {
+        if (!status || status == 'pending' || !end) return 604800;
+        const sDate = new Date(start);
+        const eDate = new Date(end);
+        return Math.abs(sDate.getTime() - eDate.getTime() / 1000)
+    }
+    function pointCalc() {
+        const newData = value.participants.map(element => {
+            return { ...element, 'final_time': calcFinal(element['start_time'], element['end_time'], element.status) }
+        })
+        newData.sort((a, b) => a['final_time'] - b['final_time']);
+        newData.forEach(value => {
+            setUsers(prev => prev.map(v => {
+                if (value?.id == v?.id) {
+                    return { ...v, grade: parseInt(v.grade) ? parseInt(v.grade) + Math.floor(value['final_time'] / newData.length) : Math.floor(value['final_time'] / newData.length) }
+                }
+                else return v
+            }))
+        })
+        setData([...data.map(v => {
+            if(v.id == value.id) return {...v, participants: newData };
+            else return {...v}
+        })])
+        localStorage.setItem('challenges', JSON.stringify(data));
+        localStorage.setItem('users', JSON.stringify(users))
+    }
+    console.log(users);
     return (
         <>
             <div id='editCardMain'>
                 {edit
                     ?
                     <form id='editCard' onSubmit={handleSubmit(() => {
-                        localStorage.setItem('challenges', JSON.stringify(data?.map(v => (v.id === formData.id) ? formData : v)))
+                        localStorage.setItem('challenges', JSON.stringify(data?.map(v => (v.id === formData.id) ? { ...formData } : { ...v })))
                         setEdit(false)
+                        !(formData.isOpen) && pointCalc()
+                        // console.log(!(formData.isOpen) && 'he');
                     })}>
                         {`Edit ${value.title}:`} <br /><br />
                         <div className="editCardInputDiv">
@@ -43,7 +67,7 @@ function ChallengeCardEdit({ value }) {
                         <div className="editCardInputDiv">
                             Image:
                             <UploadWidget formData={formData} setFormData={setFormData} />
-                            <img src={formData.image} alt="" />
+                            <img id='editPic' src={formData.image} alt="" />
                         </div>
                         <div className="editCardInputDiv">
                             Description:
