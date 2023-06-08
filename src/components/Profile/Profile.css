@@ -3,3 +3,84 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+.proflie_pic{
+    border-radius: 100%;
+    width: 50px;
+    height: 50px;
+}
+
+.profile_score{
+    border-radius: 100%;
+    width: 100px;
+    height: 100px;
+    background-color: var(--orange);
+    text-align: center;
+    padding: 3%;
+    font-size: xx-large;
+}
+
+.profile_info{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 5%;
+}
+
+.profile_contents{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    height: 90px;
+}
+
+.challenge_info{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.challenges_scroller_signed{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.challenge_pic{
+    border-radius: 100%;
+    width:30%;   
+}
+
+.challenge_title{
+    width: 60%;
+}
+
+.challenges_scrollers{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;   
+}
+
+.challenges_scroller_completed{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    overflow-y: auto;
+}
+
+.profile_propertie{
+    background-color: var(--orange);
+    border-radius: 5px;
+    height: 27px;
+    font-size: x-large;
+    padding: 3px;
+    display: flex;
+    align-items: center;
+}
