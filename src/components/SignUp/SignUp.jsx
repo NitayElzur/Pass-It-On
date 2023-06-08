@@ -51,6 +51,7 @@ function SignUp() {
                     }
                     const temp = users;
                     temp.push(user);
+                    console.log(temp);
                     localStorage.setItem('users', JSON.stringify(temp))
                     localStorage.setItem('currentUser', user.id);
                 }
