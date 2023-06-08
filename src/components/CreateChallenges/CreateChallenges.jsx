@@ -5,11 +5,8 @@ import ChallengeCardEdit from '../ChallengeCardEdit/ChallengeCardEdit'
 function CreateChallenges() {
   const [data, setData] = useState([]);
   useEffect(() => {
-    // !data.length > 0 && setData(JSON.parse(localStorage.getItem('challenges')));
-    // localStorage.setItem('challenges', JSON.stringify(data))
     setData(JSON.parse(localStorage.getItem('challenges')));
   }, [])
-  console.log(data);
   return (
     <>
       <div id='editChallenge'>
