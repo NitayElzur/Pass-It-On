@@ -1,29 +1,33 @@
 import React, { useEffect, useState } from 'react'
 import '../../Jsons/users.json'
 import '../Profile/Profile.css'
+import UploadWidget from '../UploadWidget'
 
 function Profile({ id }) {
   const [data, setData] = useState({});
   const [challenges, setChallenges] = useState([])
-  // const [user, setUser] = useState(0)
   const [signedChal, setSignedChal] = useState([])
   const [completedChal, setCompletedChal] = useState([])
 
   useEffect(() => {
-    setData(JSON.parse(localStorage.getItem('users')).find(v => v.id == localStorage.getItem('currentUser')))
+    setData(JSON.parse(localStorage.getItem('users')).find(v => v?.id == localStorage.getItem('currentUser')))
     setChallenges(JSON.parse(localStorage.getItem("challenges")))
   }, [])
 
   useEffect(() => {
-    setSignedChal(challenges?.filter((challenge, i) => challenge.isOpen && data?.challenges?.find(ch=> ch.id==i+1).status !== 'completed'))
+    setSignedChal(challenges?.filter((challenge, i) => challenge.isOpen && data?.challenges?.find(ch => ch?.id == i + 1)?.status !== 'completed'))
+    setCompletedChal(challenges?.filter((challenge, i) => data?.challenges?.find(ch => ch?.id == i + 1)?.status == 'completed'))
+    localStorage.setItem('users', JSON.stringify(JSON.parse(localStorage.getItem('users')).map(v => {
+      if(v?.id == data?.id) {
+        return {...data}
+      }
+      else return v
+    })))
   }, [data])
 
-  useEffect(() => {
-    setCompletedChal(challenges?.filter((challenge, i) => data?.challenges.find(ch=> ch.id==i+1).status=='completed'))
-  }, [data])
 
   function isCompleted(element) {
-    if (element?.participants?.find(value => value.id == user).status == "completed") return true
+    if (element?.participants?.find(value => value?.id == user)?.status == "completed") return true
     return false
   }
   return (
@@ -31,7 +35,9 @@ function Profile({ id }) {
       <div id='profile-title'>Profile Page</div>
       <div className='profile_info'>
         <div className='pic-contents'>
-          <img src={data?.picture} style={{ width: 100, height: 100, borderRadius: 100 }} />
+          <UploadWidget data={data} setData={setData}>
+            <img src={data?.picture} style={{ width: 100, height: 100, borderRadius: 100, cursor: 'pointer' }} />
+          </UploadWidget>
           <div className='profile_contents'>
             <span className='profile_propertie'>
               Username: {data?.username}
@@ -61,10 +67,10 @@ function Profile({ id }) {
             {signedChal &&
               signedChal.map((value, index) => {
                 return (
-                  <div className='challenge_info'>
-                     <div className='challenge_title'>{value?.title}</div>
+                  <div key={index} className='challenge_info'>
+                    <div className='challenge_title'>{value?.title}</div>
                     <div><img className='challenge-pic' src={value?.image} /></div>
-                   
+
                   </div>
                 )
               })
@@ -73,16 +79,16 @@ function Profile({ id }) {
         </div>
         <div id='your-completed-challenges'>
 
-        <h6 className='current-challenges-title'>Your Completed Challenges</h6>
+          <h6 className='current-challenges-title'>Your Completed Challenges</h6>
           <br />
           <div className='challenges_scroller_completed'>
             {
               completedChal && completedChal.map((value, index) => {
                 return (
-                  <div className='challenge_info'>
-                     <div className='challenge_title'>{value.title}</div>
+                  <div key={index} className='challenge_info'>
+                    <div className='challenge_title'>{value.title}</div>
                     <div><img id='passed-challenges' src={value.image} /></div>
-                   
+
                   </div>
                 )
               })

@@ -49,7 +49,6 @@ function ChallengeCardEdit({ value }) {
                         !(formData.isOpen) && pointCalc()
                         localStorage.setItem('challenges', JSON.stringify(data?.map(v => (v.id === formData.id) ? { ...formData } : { ...v })))
                         setEdit(false)
-                        // console.log(!(formData.isOpen) && 'he');
                     })}>
                         {`Edit ${value.title}:`} <br /><br />
                         <div className="editCardInputDiv">

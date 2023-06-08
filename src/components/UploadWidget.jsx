@@ -1,7 +1,7 @@
-import { useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import './UploadWidget.css'
 
-function UploadWidget({formData, setFormData}) {
+function UploadWidget({ formData, setFormData, children, data, setData }) {
     const cloudinaryRef = useRef();
     const widgetRef = useRef();
     useEffect(() => {
@@ -36,14 +36,24 @@ function UploadWidget({formData, setFormData}) {
                 }
             }
         }, function (error, result) {
-            result.event === 'success' && setFormData({...formData, image: result.info.url})
+            if (result.event === 'success') {
+                if (data) {
+                    setData({ ...data, picture: result.info.url });
+                }
+                else formData && setFormData({ ...formData, picture: result.info.url })
+            }
         })
-    }, [])
+    }, [data])
     return (
         <>
-            <button id="widgetButton" type="button" onClick={() => {
-                widgetRef.current.open();
-            }}>Upload</button>
+            {children ?
+                React.cloneElement(children, { onClick: () => widgetRef.current.open() })
+                :
+
+                <button id="widgetButton" type="button" onClick={() => {
+                    widgetRef.current.open();
+                }}>Upload</button>
+            }
         </>
     )
 }
