@@ -55,17 +55,10 @@ function SignUp() {
                         "challenges": [
                         ]
                     }
-<<<<<<< HEAD
                     const temp = users;
                     temp.push(user);
                     console.log(temp);
                     localStorage.setItem('users', JSON.stringify(temp))
-=======
-                    const updatedUsers = [...users, user]; // create a new array with the updated values
-                    console.log(users);
-                    localStorage.setItem('users', JSON.stringify(updatedUsers));
-                    setUsers(updatedUsers);
->>>>>>> c47a846 ( 11.0)
                     localStorage.setItem('currentUser', user.id);
                 }
             })}>
